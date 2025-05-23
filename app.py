@@ -40,5 +40,12 @@ def delete_image(filename):
     else:
         return 'Not Found', 404
 
+@app.route('/download/<filename>')
+def download_file(filename):
+    path = os.path.join(UPLOAD_FOLDER, filename)
+    if os.path.exists(path):
+        return send_file(path, as_attachment=True)
+    return 'Not Found', 404
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001)
