@@ -41,4 +41,4 @@ def delete_image(filename):
         return 'Not Found', 404
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=6000)
+    app.run(host='0.0.0.0', port=5001)
